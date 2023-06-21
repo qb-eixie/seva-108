@@ -1,9 +1,9 @@
 const ex = require("express");
 const app = ex();
 
-
 app.get('/', (req, res) => {
-    res.send('hare Krishna, hare Ram.');
+    res.sendFile(__dirname + '/front/index.html');
 })
++-
 
 app.listen(3000);
