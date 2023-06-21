@@ -5,7 +5,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/front/index.html');
 })
 
-app.get('register', (req, res) => {
+app.get('/o', (req, res) => {
     res.sendFile(__dirname + '/front/o.html');
 })
 
