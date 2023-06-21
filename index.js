@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('register', (req, res) => {
-    res.sendFile(__dirname + '/front/ooo.html');
+    res.sendFile(__dirname + '/front/o.html');
 })
 
 app.listen(3000);
