@@ -5,11 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>   
-</body>
+<body> 
+    <div class="container">
+        <h1> Enter details for registeration</h1>
+        <div class="card">
+            <div class="card-header"></div>
+            <div class="card-body">
+                <form method="POST" action="/">
+                    <div class="fromm">
+                        <label>Full Name</label> <br>
+                        <input type="text" name="first_name" id="first_name" class="form-control" />
+                    </div>
+                    <div class="fromm">
+                        <label>Phone Number</label> <br>
+                        <input type="tel" name="last_name" id="last_name" class="form-control" />
+                    </div>
+                    <div class="fromm">
+                        <label>Email Address</label> <br>
+                        <input type="text" name="email_address" id="email_address" class="form-control" />
+                    </div>
+                    <div class="fromm">
+                        <input type="submit" name="submit_button" class="btn" value="SUBMIT" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+</body>   
+<style>
+    .btn {
+        width: 17dvw;
+        color: red;
+    }
+    input {
+        height: 3dvw;
+        width: 17dvw;
+    }
 
-<script>
-    console.log("hare krishna, hare ram")
-</script>
+    .fromm {
+        height: 5dvw;
+    }
+</style>
 </html>
 
