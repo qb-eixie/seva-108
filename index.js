@@ -1,6 +1,11 @@
+
 const mongoose = require("mongoose"); 
 const express = require('express');
-mongoose.connect("mongodb+srv://admin:admin@seva-108.vrzj5yt.mongodb.net/seva-108?retryWrites=true&w=majority");
+
+const URI = "mongodb+srv://admin:admin@seva-108.vrzj5yt.mongodb.net/seva-108?retryWrites=true&w=majority";
+
+mongoose.connect(URI)
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, "connection error:"));
 
