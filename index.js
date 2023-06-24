@@ -85,7 +85,6 @@ app.post('/', function(request, response, next) {
 
     sevak.save().then((result) => {
         console.log(result);
-        console.log("sent to database.");
     })   
 
 	response.send("Your Deatails has been submmited");
