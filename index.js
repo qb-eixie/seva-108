@@ -81,11 +81,11 @@ app.post('/', function(request, response, next) {
         _id:    request.body.tel,
         name:   request.body.first_name,
         email:  request.body.email,
-        // address:body
     });
 
     sevak.save().then((result) => {
         console.log(result);
+        console.log("sent to database.");
     })   
 
 	response.send("Your Deatails has been submmited");
