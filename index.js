@@ -26,57 +26,7 @@ const Profile = mongoose.model("Seva", profile_schema);
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.get('/', function(request, response, next) {
-	response.send(
-    `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body> 
-        <div class="container">
-            <h1> Enter details for registeration</h1>
-            <div class="card">
-                <div class="card-header"></div>
-                <div class="card-body">
-                    <form method="POST" action="/">
-                        <div class="fromm">
-                            <label>Full Name</label> <br>
-                            <input type="text" name="first_name" id="first_name" class="form-control" />
-                        </div>
-                        <div class="fromm">
-                            <label>Phone Number</label> <br>
-                            <input type="tel" name="tel" id="tel" class="form-control" />
-                        </div>
-                        <div class="fromm">
-                            <label>Email Address</label> <br>
-                            <input type="text" name="email" id="email" class="form-control" />
-                        </div>
-                        <div class="fromm">
-                            <input type="submit" name="submit_button" class="btn" value="SUBMIT" />
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>  
-    </body>   
-    <style>
-        .btn {
-            width: 17dvw;
-            color: red;
-        }
-        input {
-            height: 3dvw;
-            width: 17dvw;
-        }
-    
-        .fromm {
-            height: 5dvw;
-        }
-    </style>
-    </html>`
-    );
+	response.sendFile(__dirname + "/index.html");
 
 });
 
@@ -84,15 +34,18 @@ app.post('/', function(request, response, next) {
     console.log(request.body);
     const sevak = new Profile ({
         _id:    request.body.tel,
-        name:   request.body.first_name,
+        name:   request.body.name,
         email:  request.body.email,
     });
 
-    sevak.save().then((result) => {
-        console.log(result);
-    })   
-
-	response.send("Your Deatails has been submmited");
+    try {      sevak.save().then((result) => {
+                console.log(result);
+        })   }
+    catch(e) {
+        console.log(e);
+    }
+    
+	response.send("Your Details has been submmited");
 });
 
 app.listen(3000);
