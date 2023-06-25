@@ -17,7 +17,8 @@ const profile_schema = mongoose.Schema({
     _id:  Number,
     name: String,
     email: String, 
-    address: String
+    address: String,
+    seva: String
 });
 
 const Profile = mongoose.model("Seva", profile_schema);
@@ -38,13 +39,9 @@ app.post('/', function(request, response, next) {
         email:  request.body.email,
     });
 
-    try {      sevak.save().then((result) => {
+    sevak.save().then((result) => {
                 console.log(result);
-        })   }
-    catch(e) {
-        console.log(e);
-    }
-    
+        })
 	response.send("Your Details has been submmited");
 });
 
