@@ -39,7 +39,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', function(request, response, next) {
-	response.sendFile(__dirname + "/gat.html");
+	response.sendFile(__dirname + "/get.html");
 });
 
 app.get('/cooking', function(request, response, next) {
