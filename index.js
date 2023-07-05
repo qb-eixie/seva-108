@@ -79,7 +79,7 @@ app.post('/crowd_management', function(request, response, next) {
     text: "Your details has been succesfully submitted.\nWe will contact you shortly.", 
     html: "", 
   });
-    const sevak = new crowd_management ({
+    const sevak = new crowd_managementcy ({
         _id:    request.body.tel,
         name:   request.body.name,
         email:  request.body.email,
