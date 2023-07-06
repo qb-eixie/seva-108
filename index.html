@@ -3,11 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>getjson</title>
+    <title>Volenteers</title>
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-    <div id="show"></div>    
+    <div id="show">
+        Volenteers
+    </div>    
 </body>
+<style>
+    p {
+        margin-top:-1dvw;;
+    }
+
+    #show {
+    margin-top: 1dvw;
+    margin-top: 1dvw;
+    text-align: center;
+    width: 25vw;
+    color: white;
+    background-color: rgb(94, 94, 94);
+    margin-left: 36vw;
+    border-radius: 0.3vw;
+    }
+</style>
+
     <script>
         fetch('/cooking/json', {
             method: 'GET',
@@ -17,10 +37,15 @@
         
         function displayer(data) {
             for(let i = 0; i < data.length; i++) {
-                console.log(data[i])   
-                var theDiv = document.getElementById("show");
-                var content = document.createTextNode(JSON.stringify(data[i].name) + "-");
-                theDiv.appendChild(content);
+                var Div = document.getElementById("show");
+                var ddd = document.createElement("p")                
+                var names = document.createTextNode(data[i].name);
+                var h = document.createElement("p")                
+                var t = document.createTextNode("");   
+                h.appendChild(t);             
+                ddd.appendChild(names)
+                Div.append(h);
+                Div.append(ddd);
             }
         }
     </script>
