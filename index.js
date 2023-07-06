@@ -1,4 +1,3 @@
-
 const nodemailer = require("nodemailer");
 const mongoose = require("mongoose"); 
 const express = require('express');
@@ -11,8 +10,7 @@ const transporter = nodemailer.createTransport({
       user: 'iskconseva108@gmail.com',
       pass: 'awmo jape edmi hhpe'
     }
-  });
-
+});
 
 var URI = "mongodb+srv://admin:admin@seva-108.vrzj5yt.mongodb.net/sunday-feast?retryWrites=true&w=majority";
 mongoose.connect(URI)
@@ -38,20 +36,12 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', function(request, response, next) {
-	response.sendFile(__dirname + "/get.html");
+	response.send("krishna");
 });
 
 app.get('/cooking', function(request, response, next) {
 	response.sendFile(__dirname + "/cooking.html");
 });
-
-app.get('/data', (req, res) => {
-    cooking.find({ __v: { $gte: 0 } }).exec()
-        .then((doc) => {
-            res.json(doc);
-        })
-})
-
 
 app.get('/crowd_management', function(request, response, next) {
 	response.sendFile(__dirname + "/crowd_manangement.html");
