@@ -2,7 +2,6 @@
 const nodemailer = require("nodemailer");
 const mongoose = require("mongoose"); 
 const express = require('express');
-const wbm = require('wbm');
 
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -46,6 +45,14 @@ app.get('/cooking', function(request, response, next) {
 	response.sendFile(__dirname + "/cooking.html");
 });
 
+app.get('/data', (req, res) => {
+    cooking.find({ __v: { $gte: 0 } }).exec()
+        .then((doc) => {
+            res.json(doc);
+        })
+})
+
+
 app.get('/crowd_management', function(request, response, next) {
 	response.sendFile(__dirname + "/crowd_manangement.html");
 });
@@ -83,7 +90,8 @@ app.post('/crowd_management', function(request, response, next) {
     text: "Your details has been succesfully submitted.\nWe will contact you shortly.", 
     html: "", 
   });
-    const sevak = new crowd_managementcy ({
+
+  const sevak = new crowd_managementcy ({
         _id:    request.body.tel,
         name:   request.body.name,
         email:  request.body.email,
@@ -96,7 +104,5 @@ app.post('/crowd_management', function(request, response, next) {
         })
 	response.send("Your Details has been submmited");
 });
-
-
 
 app.listen(3000);
