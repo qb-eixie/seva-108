@@ -57,6 +57,13 @@ app.get('/crowd_management', function(request, response, next) {
 	response.sendFile(__dirname + "/crowd_manangement.html");
 });
 
+app.get('/cooking/json', (req, res) => {
+  cooking.find({__v: { $gte: 0} }).exec()
+  .then((doc) => {
+      res.json(doc);
+  })    
+})
+
 app.post('/cooking', function(request, response, next) {
   console.log(request.body);
     var info = transporter.sendMail({
