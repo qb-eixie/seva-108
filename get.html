@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>get_json</title>
+    <title>getjson</title>
 </head>
 <body>
     <div id="show"></div>    
 </body>
     <script>
-
         fetch('https:data-filler.cyclic.app/cooking', {
             method: 'GET',
         })
@@ -20,7 +19,7 @@
             for(let i = 0; i < data.length; i++) {
                 // console.log(data[i])   
                 var theDiv = document.getElementById("show");
-                var content = document.createTextNode(data[i].name + "---");
+                var content = document.createTextNode(JSON.stringify(data[i].name) + "-");
                 theDiv.appendChild(content);
             }
         }
