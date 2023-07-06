@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-    <div id="show">
-        Volenteers
-    </div>    
+    <div id="show"> </div>    
 </body>
 <style>
     p {
@@ -17,10 +15,12 @@
     }
 
     #show {
-    margin-top: 1dvw;
-    margin-top: 1dvw;
-    text-align: center;
-    width: 25vw;
+    padding-left: 1dvw;
+    padding-right: 1dvw;
+    padding: 1dvw;
+    padding-top: 1dvw;
+    text-align: left;
+    width: fit-content;
     color: white;
     background-color: rgb(94, 94, 94);
     margin-left: 36vw;
@@ -36,10 +36,12 @@
         .then(data => displayer(data))
         
         function displayer(data) {
+            var Div = document.getElementById("show");
+            var t = document.createTextNode("Volenteers registered cooking: " + data.length + "/20");   
+            Div.appendChild(t);
             for(let i = 0; i < data.length; i++) {
-                var Div = document.getElementById("show");
                 var ddd = document.createElement("p")                
-                var names = document.createTextNode(data[i].name);
+                var names = document.createTextNode("> " + data[i].name);
                 var h = document.createElement("p")                
                 var t = document.createTextNode("");   
                 h.appendChild(t);             
