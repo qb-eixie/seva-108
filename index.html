@@ -3,29 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volenteers</title>
-    <link rel="stylesheet" href="style1.css">
+    <title>Sunday feast</title>
 </head>
 <body>
-    <div id="show"> </div>    
+    <div id="box">
+        <div id="div0">  
+            <div id="bar">          </div>
+            <div id="progress">     </div>
+            <br><br>
+        </div>
+        
+        <div id="div1"> 
+            <div id="bar0">         </div>
+            <div id="progress0">    </div>
+            <br><br>      
+        </div>
+    </div>
+
 </body>
 <style>
     p {
-        margin-top:-1dvw;;
+        margin-top:-1dvw;
+        font-family: monospace;
     }
 
-    #show {
-    padding-left: 1dvw;
-    padding-right: 1dvw;
-    padding: 1dvw;
-    padding-top: 1dvw;
-    text-align: left;
-    width: fit-content;
-    color: white;
-    background-color: rgb(94, 94, 94);
-    margin-left: 36vw;
-    border-radius: 0.3vw;
+    #box {
+        margin-left: 20dvw;
+        display: flex;
+        align-items: center;
     }
+
+    #div0 {
+        padding-left: 1dvw;
+        padding-right: 1dvw;
+        padding-top: 1dvw;
+        text-align: left;
+        width: 26dvw;
+        color: white;
+        background-color: rgb(97, 97, 97);
+        border-radius: 0.3vw;
+    }
+    
+    #div1 {
+        margin-top: 1.7dvw;
+        padding-left: 1dvw;
+        padding-right: 1dvw;
+        padding-top: 1dvw;
+        text-align: left;
+        width: 26dvw;
+        color: white;
+        background-color: rgb(97, 97, 97);
+        border-radius: 0.3vw;
+        margin-left: 3dvw;
+    }
+
+    #bar {
+        position: absolute;
+        width: 26dvw;
+        border-radius: 0.3vw;
+        height: 3dvw;
+        background-color: rgb(76, 80, 76);
+    }
+    #progress {
+        position: absolute;
+        height: 3dvw;
+        border-radius: 0.3vw;
+        background-color: rgb(115, 255, 0);
+    }
+
+    #bar0 {
+        position: absolute;
+        border-radius: 0.3vw;
+        width: 26dvw;
+        height: 3dvw;
+        background-color: rgb(76, 80, 76);
+    }
+    #progress0 {
+        border-radius: 0.3vw;
+        position: absolute;
+        height: 3dvw;
+        background-color: rgb(115, 255, 0);
+    }
+
+
+
+
 </style>
 
     <script>
@@ -36,7 +98,8 @@
         .then(data => displayer(data))
         
         function displayer(data) {
-            var Div = document.getElementById("show");
+            document.getElementById("progress").style.width = data.length*26/20 + "dvw";
+            var Div = document.getElementById("div0");
             var t = document.createTextNode("Volenteers registered cooking: " + data.length + "/20");   
             Div.appendChild(t);
             for(let i = 0; i < data.length; i++) {
@@ -48,6 +111,28 @@
                 ddd.appendChild(names)
                 Div.append(h);
                 Div.append(ddd);
+            }
+        }
+
+        fetch('/crowdManagement/json', {
+            method: 'GET',
+        })
+        .then(response => response.json())
+        .then(data => dis(data))
+        function dis(data) {
+            document.getElementById("progress0").style.width = data.length*26/10 + "dvw";
+            var D = document.getElementById("div1");
+            var t = document.createTextNode("Volenteers registered crowd management: " + data.length + "/10");   
+            D.appendChild(t);
+            for(let i = 0; i < data.length; i++) {
+                var ddd = document.createElement("p")                
+                var names = document.createTextNode("> " + data[i].name);
+                var h = document.createElement("p")                
+                var t = document.createTextNode("");   
+                h.appendChild(t);             
+                ddd.appendChild(names)
+                D.append(h);
+                D.append(ddd);
             }
         }
     </script>

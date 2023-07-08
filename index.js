@@ -30,7 +30,7 @@ const profile_schema = mongoose.Schema({
 
 
 const cooking = mongoose.model("Cooking", profile_schema);
-const crowd_management = mongoose.model("Crowd_mangement", profile_schema);
+const crowdManagement = mongoose.model("Crowd_mangement", profile_schema);
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -43,8 +43,8 @@ app.get('/cooking', function(request, response, next) {
 	response.sendFile(__dirname + "/cooking.html");
 });
 
-app.get('/crowd_management', function(request, response, next) {
-	response.sendFile(__dirname + "/crowd_manangement.html");
+app.get('/crowdManagement', function(request, response, next) {
+	response.sendFile(__dirname + "/crowdManangement.html");
 });
 
 app.get('/cooking/json', (req, res) => {
@@ -53,6 +53,14 @@ app.get('/cooking/json', (req, res) => {
       res.json(doc);
   })    
 })
+
+app.get('/crowdManagement/json', (req, res) => {
+  crowdManagement.find({__v: { $gte: 0} }).exec()
+  .then((doc) => {
+      res.json(doc);
+  })    
+})
+
 
 app.post('/cooking', function(request, response, next) {
   console.log(request.body);
@@ -78,7 +86,7 @@ app.post('/cooking', function(request, response, next) {
 });
 
 
-app.post('/crowd_management', function(request, response, next) {
+app.post('/crowdManagement', function(request, response, next) {
   console.log(request.body);
   var info = transporter.sendMail({
     from: 'iskconseva108@gmail.com',
@@ -88,7 +96,7 @@ app.post('/crowd_management', function(request, response, next) {
     html: "", 
   });
 
-  const sevak = new crowd_managementcy ({
+  const sevak = new crowdManagement ({
         _id:    request.body.tel,
         name:   request.body.name,
         email:  request.body.email,
