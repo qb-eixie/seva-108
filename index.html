@@ -10,27 +10,65 @@
         <div id="div0">  
             <div id="bar">          </div>
             <div id="progress">     </div>
-            <br><br>
+            <br>
+            <br>
+            <br>
+            <a href="https://seva-108.onrender.com/cooking" class="buttonn"> REGISTER</a>
         </div>
         
         <div id="div1"> 
             <div id="bar0">         </div>
             <div id="progress0">    </div>
-            <br><br>      
+            <br> 
+            <br>
+            <br>
+            <a href="https://seva-108.onrender.com/crowdManagement" class="buttonn"> REGISTER</a>
         </div>
     </div>
-
 </body>
 <style>
+    h2  {
+        margin-left: 7dvw;
+    }
+    /* h5 {
+        font-size: 1.2dvw;
+        font-family: sans-serif;
+    }
+    #hc {
+        margin-left: 2.5dvw;
+        font-size: 1.2dvw;
+        font-family: sans-serif;
+    } */
     p {
+        padding-left: 0.3dvw;
+        font-size: 0.2;
+        border-radius: 0.2dvw;
+        color: black;
+        background-color: white;
         margin-top:-1dvw;
-        font-family: monospace;
+        font-family: sans-serif;
+    }
+
+    .buttonn {
+        border-radius: 0.6dvw;
+        font-size: 2vw;
+        font-weight: 600;
+        margin-left: 5dvw;
+        color: white;
+        background: rgb(0, 0, 0);
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Times New Roman', Times, serif;
+        padding-left: 3dvw;
+        padding-right: 3dvw;
+        padding-top: 0.5dvw;
+        padding-bottom: 0.5dvw;
     }
 
     #box {
-        margin-left: 20dvw;
         display: flex;
-        align-items: center;
+        justify-content: center;
+        align-items: first baseline;
     }
 
     #div0 {
@@ -42,6 +80,7 @@
         color: white;
         background-color: rgb(97, 97, 97);
         border-radius: 0.3vw;
+        padding-bottom: 1.5dvw;
     }
     
     #div1 {
@@ -55,6 +94,7 @@
         background-color: rgb(97, 97, 97);
         border-radius: 0.3vw;
         margin-left: 3dvw;
+        padding-bottom: 1.5dvw;
     }
 
     #bar {
@@ -84,10 +124,6 @@
         height: 3dvw;
         background-color: rgb(115, 255, 0);
     }
-
-
-
-
 </style>
 
     <script>
@@ -100,11 +136,13 @@
         function displayer(data) {
             document.getElementById("progress").style.width = data.length*26/20 + "dvw";
             var Div = document.getElementById("div0");
-            var t = document.createTextNode("Volenteers registered cooking: " + data.length + "/20");   
-            Div.appendChild(t);
+            var s = document.createElement("h2")
+            var t = document.createTextNode(data.length + "/20" + " registered");   
+            s.appendChild(t)
+            Div.appendChild(s);
             for(let i = 0; i < data.length; i++) {
                 var ddd = document.createElement("p")                
-                var names = document.createTextNode("> " + data[i].name);
+                var names = document.createTextNode(data[i].name);
                 var h = document.createElement("p")                
                 var t = document.createTextNode("");   
                 h.appendChild(t);             
@@ -122,11 +160,13 @@
         function dis(data) {
             document.getElementById("progress0").style.width = data.length*26/10 + "dvw";
             var D = document.getElementById("div1");
-            var t = document.createTextNode("Volenteers registered crowd management: " + data.length + "/10");   
-            D.appendChild(t);
+            var s = document.createElement("h2")
+            var t = document.createTextNode(data.length + "/10" + " registered");   
+            s.appendChild(t)
+            D.appendChild(s);
             for(let i = 0; i < data.length; i++) {
                 var ddd = document.createElement("p")                
-                var names = document.createTextNode("> " + data[i].name);
+                var names = document.createTextNode(data[i].name);
                 var h = document.createElement("p")                
                 var t = document.createTextNode("");   
                 h.appendChild(t);             
