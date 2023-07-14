@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-var URI = "mongodb+srv://admin:admin@seva-108.vrzj5yt.mongodb.net/sunday-feast?retryWrites=true&w=majority";
+var URI = "mongodb+srv://admin:admin@seva-108.vrzj5yt.mongodb.net/sunday-feast?retryWrites=true&w=majority?directConnection=true";
 mongoose.connect(URI)
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, "connection error:"));
