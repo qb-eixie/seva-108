@@ -36,7 +36,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', function(request, response, next) {
-	response.sendFile(__dirname + "/index.html");
+	response.sendFile(__dirname + "/main.html");
 });
 
 app.get('/cooking', function(request, response, next) {
