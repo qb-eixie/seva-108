@@ -7,18 +7,22 @@
 </head>
 <body>
     <div>
-        <div class="menu"> SEVA-108 <br> ISKCON ABIDS</div>
+        <div class="menu"> 
+            <h1>
+                SEVA-108
+            </h1>
         <div class="info">
             <img src="https://iskconhyderabad.com/wp-content/uploads/RathaYatra_23_dsc3788-scaled.jpg" alt="krishna" class="img_100">
-            <h2>THE JOY OF VOLUNTEERING</h2>
-            <p>With busy lives, it can be hard to find time to volunteer. However, the benefits of volunteering can be enormous. Volunteering offers vital help to people in need, worthwhile causes, and the community, but the benefits can be even greater for you, the volunteer. The right match can help you to find friends, connect with the community, learn new skills, and even advance your spiritual life. Giving to others can also help protect your mental and physical health. It can reduce stress, combat depression, keep you mentally stimulated, and provide a sense of purpose. While it’s true that the more you volunteer, the more benefits you’ll experience, volunteering doesn’t have to involve a long-term commitment or taking a huge amount of time out of your busy day.</p>
+            <div id="p">
+                <h2 id="bene">THE JOY OF VOLUNTEERING</h2>
+                With busy lives, it can be hard to find time to volunteer. However, the benefits of volunteering can be enormous. Volunteering offers vital help to people in need, worthwhile causes, and the community, but the benefits can be even greater for you, the volunteer. The right match can help you to find friends, connect with the community, learn new skills, and even advance your spiritual life. Giving to others can also help protect your mental and physical health. It can reduce stress, combat depression, keep you mentally stimulated, and provide a sense of purpose. While it’s true that the more you volunteer, the more benefits you’ll experience, volunteering doesn’t have to involve a long-term commitment or taking a huge amount of time out of your busy day.
+            </div>
         </div>
         <div class="box">
             <h2>UPCOMIG EVENTS:</h2>
             <div class="events">
                 <div>
-                    krishna_ashtami 
-                    <br>
+                    <p class="event_btn"> Krishna Ashtami </p> 
                     <img src="https://iskconhyderabad.com/wp-content/uploads/RathaYatra_23_dsc3788-scaled.jpg" alt="seva" id="event_img">
                     <br> <br>
                     <a href="www.google.com"> learn more </a>
@@ -35,28 +39,41 @@
     </div>
 </body>
 <style>
-
+    
     body {
         margin: 0;
-        font-family: sans-serif;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-image: url('https://previews.123rf.com/images/viktory/viktory1812/viktory181200103/114010677-seamless-pattern-with-abstract-motifs-blue-pattern-in-indian-style-oriental-background-handmade.jpg');
     }
-
+    
+    h1 {
+        margin-bottom: 0dvw;
+        margin-top: 0dvw;
+        background-color: rgba(0, 242, 255, 0.799);
+    }
+    
     .img_100 {
         height: 60dvw;
-        width: 100dvw;
+        width: 95dvw;
+        border-radius: 2dvw;
+        margin-left: 1dvw;
+        margin-right: 1dvw;
+        border-color: black;
     }
-
-    p {
-        margin-top: -3dvw;
+    
+    #p {
+        backdrop-filter: blur(0.7dvw);
         height: fit-content;
-        margin-left: 3dvw;
-        margin-right: 2dvw;
+        padding-top: 5dvw;
+        padding-bottom: 5dvw;
+        padding-left: 3dvw;
+        padding-right: 2dvw;
         text-align:left;
         font-size: 4dvw;
+        margin-bottom: 0dvw;
     }
 
     .menu {
-        background-color: rgba(0, 242, 255, 0.799);
         color: black;
         height: 20dvw;
         text-align: center;
@@ -64,15 +81,20 @@
         font-weight: 800;
     }
    
-    h2 {
-        margin-top: -0.5dvw;
-        text-align: center;
+    .info {
+        background-color: rgba(0, 242, 255, 0.799);
+        border-color: black;
+        font-weight: 500;
+    }
+    
+    #bene {
+        margin-bottom: 2dvw;
     }
 
     .box {
         background-color: rgba(0, 242, 255, 0.799);
         padding-bottom: 3dvw;
-        padding-top: 3dvw;
+        padding-top:  1dvw;
     }
     
     .events {
@@ -84,6 +106,11 @@
         color: white;
         background-color: black;
         border-radius: 2dvw;
+    }
+
+    .event_btn {
+        margin: 0dvw;
+        font-size: 6dvw;
     }
 
     #event_img {
@@ -117,6 +144,7 @@
         margin-bottom: -3dvw;
         background-color: white;
         font-family: monospace;
+        text-align: center;
         font-size: 4dvw;
         padding-top: 2dvw;
         padding-left: 3dvw;
