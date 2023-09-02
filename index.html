@@ -16,7 +16,6 @@
             <div id="bar">          </div>
             <div id="progress">     </div>
             <br>
-            
             <button class="view">View Registered Sevaks</button>
         </div>
         
@@ -28,7 +27,7 @@
             <div id="bar0">         </div>
             <div id="progress0">    </div>
             <br>
-
+            <button class="view">View Registered Sevaks</button>
         </div>
     </div>
 </body>
@@ -45,8 +44,8 @@
         color: black;
         background-color: white;
         margin-top:-1dvw;
-        font-family: sans-serif;
         font-size: 0.3;
+        font-family: sans-serif;
     }
 
     .buttonn {
@@ -97,18 +96,19 @@
         padding-bottom: 1.5dvw;
     }
 
+    #progress {
+        position: absolute;
+        height: 3dvw;
+        border-radius: 0.3vw;
+        background-color: rgb(115, 255, 0);
+    }
+
     #bar {
         position: absolute;
         width: 26dvw;
         border-radius: 0.3vw;
         height: 3dvw;
         background-color: rgb(76, 80, 76);
-    }
-    #progress {
-        position: absolute;
-        height: 3dvw;
-        border-radius: 0.3vw;
-        background-color: rgb(115, 255, 0);
     }
 
     #bar0 {
@@ -128,7 +128,80 @@
     .view {
         background-color: white;
         border: none;
-        
+    }
+
+    @media only screen and (max-width: 600px) {
+        #box {
+        display:list-item;
+        justify-content: center;
+    }
+
+    .buttonn {
+        border-radius: 0.6dvw;
+        font-size: 10vw;
+        font-weight: 600;
+        margin-left: 14dvw;
+        color: white;
+        background: rgb(0, 0, 0);
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Times New Roman', Times, serif;
+        padding-left: 3dvw;
+        padding-right: 3dvw;
+        padding-top: 0.5dvw;
+        padding-bottom: 0.5dvw;
+    }
+
+    #div0 {
+        margin-left: 5dvw;
+        padding-left: 1dvw;
+        padding-right: 1dvw;
+        padding-top: 1dvw;
+        text-align: left;
+        width: 85dvw;
+        color: white;
+        background-color: rgb(97, 97, 97);
+        border-radius: 0.5vw;
+        padding-bottom: 1.5dvw;
+    }
+    
+    #div1 {
+        margin-top: 1.7dvw;
+        padding-left: 1dvw;
+        padding-right: 1dvw;
+        padding-top: 1dvw;
+        text-align: left;
+        width: 85dvw;
+        color: white;
+        background-color: rgb(97, 97, 97);
+        border-radius: 0.5vw;
+        margin-left: 5dvw;
+        padding-bottom: 1.5dvw;
+    }
+
+    #bar {
+        position: absolute;
+        border-radius: 0.3vw;
+        width: 80dvw;
+        height: 10dvw;
+        background-color: rgb(76, 80, 76);
+        margin-left: 2.5dvw;
+    }
+
+    #bar0 {
+        position: absolute;
+        border-radius: 0.3vw;
+        width: 80dvw;
+        height: 10dvw;
+        background-color: rgb(76, 80, 76);
+        margin-left: 2.5dvw;
+    }
+
+    .view {
+        margin-top: 5dvw;
+        margin-left: 22dvw;
+    }
+
     }
 
 </style>
