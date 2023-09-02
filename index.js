@@ -39,6 +39,11 @@ app.get('/', function(request, response, next) {
 	response.sendFile(__dirname + "/main.html");
 });
 
+app.get('/janmashtami', function(request, response, next) {
+	response.sendFile(__dirname + "/index.html");
+});
+
+
 app.get('/cooking', function(request, response, next) {
 	response.sendFile(__dirname + "/cooking.html");
 });
